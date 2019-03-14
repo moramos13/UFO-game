@@ -13,11 +13,11 @@ std::vector<char> incorrect;
 bool guess;
 
 void inicialize_variables(){
-  std::string codeword = set_codeword();
-  std::string answer = set_answer();
-  int misses = 0;
-  std::vector<char> incorrect;
-  bool guess = false;
+  codeword = set_codeword();
+  answer = set_answer();
+  misses = 0;
+  incorrect = {};
+  guess = false;
 }
 
 //Define set_codeword
@@ -33,11 +33,10 @@ std::string set_codeword()
 
 //Define set_answer
 std::string set_answer (){
-  std::vector<char> ans;
-  for (int i = 0; i < codeword.size(); i++)
-    ans.push_back('_');
-  
-  std::string answ (ans.begin(), ans.end());
+  std::string answ;
+  for (int i = 0; i < codeword.size(); i++){
+    answ.push_back('_');
+  }
   return answ;
 }
 
